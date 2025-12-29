@@ -4,19 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio Pessoal</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <nav id="navbar">
     <a href="#welcome-section">Início</a>
     <a href="#projects">Projetos</a>
-    <a
-      id="profile-link"
-      href="https://github.com/Pedrohsantosg"
-      target="_blank"
-    >
-      GitHub
-    </a>
+    <div class="github-menu">
+      <a
+        id="profile-link"
+        href="https://github.com/Pedrohsantosg"
+        target="_blank"
+      >
+        GitHub
+      </a>
+      <div class="github-dropdown" id="github-dropdown">
+        <a href="https://github.com/Pedrohsantosg" target="_blank">GitHub Pedro</a>
+        <a href="https://github.com/JoaquimLG" target="_blank">GitHub Joaquim</a>
+      </div>
+    </div>
   </nav>
 
   <section id="welcome-section">
@@ -31,6 +38,24 @@
     </div>
 
   </section>
+
+  <script>
+    const profileLink = document.getElementById('profile-link');
+    const dropdown = document.getElementById('github-dropdown');
+
+    if (profileLink && dropdown) {
+      profileLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        dropdown.classList.toggle('open');
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!profileLink.contains(event.target) && !dropdown.contains(event.target)) {
+          dropdown.classList.remove('open');
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
