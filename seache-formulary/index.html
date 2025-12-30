@@ -3,86 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulário de Pesquisa</title>
+  <title>Pesquisa Acadêmica</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1 id="title">Formulário de Pesquisa</h1>
+  <div class="container">
 
-  <p id="description">
-    Este formulário coleta informações para fins acadêmicos.
-  </p>
+    <h1 id="title">Pesquisa Acadêmica</h1>
+    <p id="description">
+      Este formulário tem como objetivo coletar informações sobre o perfil de estudantes
+      e interessados na área de programação.
+    </p>
 
-  <form id="survey-form">
+    <form id="survey-form">
 
-    <label id="name-label" for="name">
-      Nome
-    </label>
-    <input
-      id="name"
-      type="text"
-      placeholder="Digite seu nome"
-      required
-    />
+      <h2>Dados Pessoais</h2>
 
-    <label id="email-label" for="email">
-      Email
-    </label>
-    <input
-      id="email"
-      type="email"
-      placeholder="Digite seu email"
-      required
-    />
+      <label id="name-label" for="name">Nome completo</label>
+      <input id="name" type="text" placeholder="Digite seu nome" required />
 
-    <label id="number-label" for="number">
-      Idade
-    </label>
-    <input
-      id="number"
-      type="number"
-      placeholder="Digite sua idade"
-      min="10"
-      max="99"
-    />
+      <label id="email-label" for="email">Email</label>
+      <input id="email" type="email" placeholder="exemplo@email.com" required />
 
-    <label for="dropdown">
-      Área de interesse
-    </label>
-    <select id="dropdown">
-      <option value="frontend">Front-end</option>
-      <option value="backend">Back-end</option>
-    </select>
+      <label id="number-label" for="number">Idade</label>
+      <input id="number" type="number" min="10" max="99" placeholder="Ex: 20" />
 
-    <p>Você estuda programação?</p>
-    <label>
-      <input type="radio" name="study" value="yes" />
-      Sim
-    </label>
-    <label>
-      <input type="radio" name="study" value="no" />
-      Não
-    </label>
+      <h2>Perfil Acadêmico</h2>
 
-    <p>Tecnologias conhecidas:</p>
-    <label>
-      <input type="checkbox" value="html" />
-      HTML
-    </label>
-    <label>
-      <input type="checkbox" value="css" />
-      CSS
-    </label>
+      <label for="dropdown">Área de maior interesse</label>
+      <select id="dropdown" required>
+        <option value="">Selecione uma opção</option>
+        <option value="frontend">Front-end</option>
+        <option value="backend">Back-end</option>
+        <option value="fullstack">Full Stack</option>
+        <option value="dados">Dados / IA</option>
+      </select>
 
-    <p>Comentários adicionais:</p>
-    <textarea placeholder="Digite aqui..."></textarea>
+      <p>Você estuda programação atualmente?</p>
+      <div class="inline-group">
+        <label><input type="radio" name="study" value="sim" /> Sim</label>
+        <label><input type="radio" name="study" value="nao" /> Não</label>
+      </div>
 
-    <button id="submit" type="submit">
-      Enviar
-    </button>
+      <p>Nível de conhecimento</p>
+      <div class="inline-group">
+        <label><input type="radio" name="level" value="iniciante" /> Iniciante</label>
+        <label><input type="radio" name="level" value="intermediario" /> Intermediário</label>
+        <label><input type="radio" name="level" value="avancado" /> Avançado</label>
+      </div>
 
-  </form>
+      <p>Tecnologias conhecidas</p>
+      <div class="inline-group">
+        <label><input type="checkbox" /> HTML</label>
+        <label><input type="checkbox" /> CSS</label>
+        <label><input type="checkbox" /> JavaScript</label>
+        <label><input type="checkbox" /> Java</label>
+        <label><input type="checkbox" /> Python</label>
+      </div>
+
+      <p>Objetivo com a programação</p>
+      <select>
+        <option value="">Selecione</option>
+        <option>Acadêmico</option>
+        <option>Mercado de trabalho</option>
+        <option>Projetos pessoais</option>
+        <option>Curiosidade</option>
+      </select>
+
+      <p>Comentários adicionais</p>
+      <textarea placeholder="Digite aqui suas observações"></textarea>
+
+      <button id="submit" type="submit">Enviar</button>
+
+    </form>
+
+  </div>
 
 </body>
 </html>
